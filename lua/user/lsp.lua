@@ -55,5 +55,3 @@ mason_null_ls.setup {
   ensure_installed = linters,
   automatic_setup = true
 }
-
-mason_null_ls.setup_handlers()
