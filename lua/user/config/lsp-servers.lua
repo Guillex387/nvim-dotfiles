@@ -16,7 +16,12 @@ local servers = {
   },
   clangd = {},
   gopls = {},
-  tsserver = {}
+  tsserver = {},
+  rust_analyzer = {
+    cargo = {
+      allFeatures = true
+    }
+  }
 }
 
 return servers
