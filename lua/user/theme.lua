@@ -1,5 +1,5 @@
 require('catppuccin').setup {
-  flavour = 'mocha',
+  flavour = 'macchiato',
   term_colors = false,
   transparent_background = false
 }
