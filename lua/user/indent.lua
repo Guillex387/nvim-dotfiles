@@ -1,5 +1,6 @@
-require('indent_blankline').setup {
-  char = '┊'
+require("ibl").setup {
+  indent = { char = "┊" },
+  scope = { enabled = false },
 }
 
 local imaps = require('user.config.keymaps').indent
