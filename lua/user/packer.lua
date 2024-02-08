@@ -5,8 +5,8 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- Color scheme
   use {
-    'catppuccin/nvim',
-    as = 'catppuccin'
+    'folke/tokyonight.nvim',
+    as = 'tokyonight'
   }
   -- Dev icons
   use 'nvim-tree/nvim-web-devicons'

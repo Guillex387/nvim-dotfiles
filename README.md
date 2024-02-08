@@ -2,6 +2,11 @@
 
 This is my personal configuration of neovim with lua.
 
+```sh
+# Before setting up the config, install Packer (example below with AUR)
+yay -S nvim-packer-git
+```
+
 > **Note**: this neovim config is not stable, and does not have maintance.
 
 ## Captures
