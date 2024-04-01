@@ -8,9 +8,13 @@ This is my personal configuration of neovim with lua.
 
 Before to install the config, you need to install these tools:
 
+### neovim
+
+[Install neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md) editor if you don't have it installed yet.
+
 ### git
 
-The main tool to install is [git](https://git-scm.com/), if you don't have it installed yet.
+Install [git](https://git-scm.com/) if you don't have it installed yet.
 
 ### packer
 
@@ -51,6 +55,8 @@ Finally to install the config:
 rm -rf ~/.config/nvim/*
 # Install this repo config
 git clone --depth 1 https://github.com/Guillex387/nvim-dotfiles.git ~/.config/nvim
+# Install packer dependencies
+nvim +PackerSync
 ```
 
 ## Captures
