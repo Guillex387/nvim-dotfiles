@@ -1,22 +1,15 @@
-require('tabline').setup {
-  enable = false,
-  options = {
-    show_filename_only = true,
-    show_tabs_only = true
-  }
-}
-
 require('lualine').setup {
   options = {
     icons_enable = true,
-    theme = 'auto'
+    globalstatus = true,
+    theme = 'auto',
   },
-  tabline = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = { require('tabline').tabline_buffers },
-    lualine_x = { require('tabline').tabline_tabs },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {},
     lualine_y = {},
-    lualine_z = {},
-  },
+    lualine_z = {}
+  }
 }

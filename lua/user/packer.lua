@@ -4,16 +4,13 @@ require('packer').startup(function(use)
   -- Package manager
   use 'wbthomason/packer.nvim'
   -- Color scheme
-  use {
-    'folke/tokyonight.nvim',
-    as = 'tokyonight'
-  }
+  use "EdenEast/nightfox.nvim"
   -- Dev icons
   use 'nvim-tree/nvim-web-devicons'
   -- Status line
   use 'nvim-lualine/lualine.nvim'
   -- Buffer line
-  use 'kdheepak/tabline.nvim'
+  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
   -- File explorer
   use 'nvim-tree/nvim-tree.lua'
   -- Search engine

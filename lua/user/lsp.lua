@@ -44,7 +44,9 @@ mason_lspconfig.setup_handlers {
       capabilities = capabilities,
       on_attach = on_attach
     }
-    opts = vim.tbl_deep_extend("force", servers[server_name], opts)
+    if servers[server_name] then
+      opts = vim.tbl_deep_extend("force", servers[server_name], opts)
+    end
     require('lspconfig')[server_name].setup(opts);
   end
 }

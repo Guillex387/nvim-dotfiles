@@ -31,3 +31,5 @@ local config = {
 }
 
 vim.diagnostic.config(config)
+vim.keymap.del('n', '<C-w>d')
+vim.keymap.del('n', '<C-w><C-d>')
