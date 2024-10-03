@@ -6,17 +6,43 @@ vim.g.loaded_netrw = 0
 vim.g.loaded_netrwPlugin = 0
 
 require('nvim-tree').setup {
+  filters = { dotfiles = false },
   disable_netrw = true,
+  hijack_cursor = true,
   sync_root_with_cwd = true,
-  respect_buf_cwd = true,
-  reload_on_bufenter = true,
   update_focused_file = {
     enable = true,
-    update_root = true
+    update_root = false,
+  },
+  view = {
+    width = 30,
+    preserve_window_proportions = true,
+  },
+  renderer = {
+    root_folder_label = false,
+    highlight_git = true,
+    indent_markers = {
+      enable = false,
+      inline_arrows = false,
+    },
+    icons = {
+      git_placement = "after",
+      glyphs = {
+        git = {
+          unstaged = "U",
+          staged = "S",
+          unmerged = "UM",
+          renamed = "R",
+          deleted = "D",
+          untracked = "UT",
+          ignored = "I",
+        },
+      },
+    },
   },
   diagnostics = {
-    enable = true
-  }
+    enable = true,
+  },
 }
 
 local api = require 'nvim-tree.api'
