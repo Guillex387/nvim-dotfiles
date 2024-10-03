@@ -1,8 +1,5 @@
 local l_maps = require('user.config.keymaps').lsp
-local linters = require 'user.config.linters'
 local servers = require 'user.config.lsp-servers'
-
--- Lsp & Null-ls keymaps
 
 local on_attach = function(client, buffer)
   client.server_capabilities.document_formatting = false
@@ -20,9 +17,6 @@ local on_attach = function(client, buffer)
   keymap(l_maps.diagnostic, vim.diagnostic.open_float)
 end
 
-
--- Lsp & Null-ls setup
-
 require('mason').setup {}
 
 local mason_lspconfig = require 'mason-lspconfig'
@@ -36,8 +30,7 @@ mason_lspconfig.setup {
   ensure_installed = server_names
 }
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 mason_lspconfig.setup_handlers {
   function(server_name)
     local opts = {
@@ -49,11 +42,4 @@ mason_lspconfig.setup_handlers {
     end
     require('lspconfig')[server_name].setup(opts);
   end
-}
-
-local mason_null_ls = require 'mason-null-ls'
-
-mason_null_ls.setup {
-  ensure_installed = linters,
-  automatic_setup = true
 }
