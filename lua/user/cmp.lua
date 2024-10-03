@@ -1,12 +1,11 @@
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
-local kind_icons = require('user.config.icons').kind
+local icons = require('user.config.icons')
 local cmp_maps = require('user.config.keymaps').cmp
 
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
-
 cmp.setup {
+  completion = { completeopt = "menu,menuone,preview,noselect" },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -51,16 +50,12 @@ cmp.setup {
     end, { 'i', 's' })
   }),
   formatting = {
+    expandable_indicator = true,
     fields = { 'kind', 'abbr', 'menu' },
-    format = function(entry, vim_item)
-      -- Kind icons
-      vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
-      vim_item.menu = ({
-        nvim_lsp = '[LSP]',
-        luasnip = '[Snippet]',
-        path = '[Path]'
-      })[entry.source.name]
-      return vim_item
+    format = function(entry, item)
+      item.kind = string.format('%s %s', icons.kind[item.kind], item.kind)
+      item.menu = string.format("%s %s", item.menu, icons.menu[entry.source.name])
+      return item
     end,
   },
   sources = {
