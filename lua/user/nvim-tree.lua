@@ -43,6 +43,9 @@ require('nvim-tree').setup {
   diagnostics = {
     enable = true,
   },
+  git = {
+    ignore = false,
+  },
 }
 
 local api = require 'nvim-tree.api'
