@@ -52,9 +52,8 @@ cmp.setup {
   formatting = {
     expandable_indicator = true,
     fields = { 'kind', 'abbr', 'menu' },
-    format = function(entry, item)
+    format = function(_, item)
       item.kind = string.format('%s %s', icons.kind[item.kind], item.kind)
-      item.menu = string.format("%s %s", item.menu, icons.menu[entry.source.name])
       return item
     end,
   },
